@@ -1,0 +1,24 @@
+💦 rl toy bridge 💙
+
+an basic bridge for opensim and lovense toy connect.
+
+My API based on https://github.com/natc0d3s/love_connect.git
+For information look here: https://github.com/natc0d3s/love_connect
+
+what you need, to host your own version. 
+Lovense developer token
+external webserver with PHP
+My script [AV]rlToyAPI 1.0
+AVSitter
+patterns notecard with name: [AV]rltoybridge
+And add the following lines into the AVPos notecard
+
+
+
+TOMENU RL TOYS💙
+
+MENU RL TOYS💙
+BUTTON Login|74355
+
+BUTTON Vibe ON|74377
+BUTTON Vibe OFF|74366
