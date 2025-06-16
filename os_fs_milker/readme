@@ -1,0 +1,89 @@
+Milker System Plugin for Opensim Satyrfarm and AvSitter 
+// Copyright © Josch Wolf, 2025
+//
+// The scripts may be freely copied and distributed,
+// BUT only in its complete and unmodified form,
+// and this copyright notice must remain intact and unaltered.
+//
+// You are NOT allowed to modify, edit, or extract parts of my script.
+// Any use of my script requires it to remain exactly as provided,
+// including this copyright notice.
+//
+// Any modification or partial use of my script requires
+// the explicit permission of the author, Josch Wolf,
+// inworld in adult-life.de.
+//
+// Violations will be pursued under applicable copyright law.
+
+
+what you need
+
+-----
+animation (exactly with this names below)
+-----
+breed_bull_anim
+breed_cow_anim
+sit_cow_idle
+
+-----
+notecards
+-----
+RECIPES
+sfp
+AVpos
+config 
+
+-----
+scripts
+-----
+product
+prod-rez_plugin
+prodget_plugin
+[AV]sitA
+[AV]sitA 1
+[AV]sitB 
+[AV]sitB 1
+[AV]adjuster (optional)
+[AV]root-control (optional)
+[AV]root-security (optional)
+[AV]root-RLV (optional)
+[AV]sf_milker vx
+os_fs_milker
+
+
+-----
+objects
+-----
+SF Milk (Product)
+[AV]helper (optional)
+
+
+-----
+AVpos
+-----
+
+"MILKER STALL" AVsitter 2.2
+MTYPE 3
+
+RLV 1
+ROLES S|D
+ONSIT CAPTURE
+ONTOUCH ASK
+TIMELOCK 5
+RECAPTURE 1
+ONCAPTURE @unsit=n|@fartouch=n
+ONRELEASE @unsit=n
+SUBCONTROL 1
+
+SITTER 0
+
+POSE Cow Milking|sit_cow_idle
+SYNC Breeding|breed_cow_anim
+{Cow Milking}<-0.047,-0.234,-0.162><180,0,-90>
+{Breeding}<-0.249,-0.115,-1.025><-180,-5,0>
+
+SITTER 1
+
+POSE Breeding|breed_bull_anim
+SYNC Breeding|breed_bull_anim
+{Breeding}<-0.254,-0.095,-1.025><-180,-5,0>
