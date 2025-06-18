@@ -1,4 +1,4 @@
-//[AV]sf_milker v2.2.lsl
+//[AV]sf_milker v2.0
 // Copyright © Josch Wolf, 2025
 //
 // This script may be freely copied and distributed,
