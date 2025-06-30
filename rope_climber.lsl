@@ -16,15 +16,15 @@
 //
 // Violations will be pursued under applicable copyright law.
 
+// Konfiguration
 vector startPosition;
-vector endOffset = <0, 0, 6>; 
-float speed_up = 1.0;             
-float speed_down = 5.0;           
-string anim = "climb";             
+vector endOffset = <0, 0, 10.2>;     // Zielhöhe
+float speed_up = 1.0;              // Geschwindigkeit nach oben
+float speed_down = 5.0;            // Geschwindigkeit nach unten
+string anim = "climb";
 
 integer avatarOn = FALSE;
 integer isMoving = FALSE;
-key currentAvatar;
 
 default
 {
@@ -32,8 +32,9 @@ default
     {
         startPosition = llGetPos();
         llSitTarget(<0.0, 0.0, 0.5>, ZERO_ROTATION);
-        llSetText("Sit to climb", <1.0, 1.0, 1.0>, 1.0);
+        llSetText("Sit to climb",<1.0,1.0,1.0>,1.0);
         llSetClickAction(CLICK_ACTION_SIT);
+
     }
 
     changed(integer change)
@@ -43,23 +44,21 @@ default
             key av = llAvatarOnSitTarget();
             if (av != NULL_KEY)
             {
-                currentAvatar = av;
+                llSetAlpha(0.0,ALL_SIDES);
                 avatarOn = TRUE;
-                llSetAlpha(0.0, ALL_SIDES); 
-                llSetText("", ZERO_VECTOR, 0);
+                llSetText("Sit to climb",<1.0,1.0,1.0>,1.0);
                 llRequestPermissions(av, PERMISSION_TRIGGER_ANIMATION);
             }
             else if (avatarOn)
             {
                 avatarOn = FALSE;
                 llStopAnimation(anim);
-
                 if (!isMoving)
                 {
-                   
+
                     moveTo(startPosition, speed_down);
-                    llSetText("Sit to climb", <1.0, 1.0, 1.0>, 1.0);
-                    llSetAlpha(0.25, ALL_SIDES); 
+                    llSetText("Sit to climb",<1.0,1.0,1.0>,1.0);
+                    llSetAlpha(0.25,ALL_SIDES);
                 }
             }
         }
@@ -70,6 +69,7 @@ default
         if (perms & PERMISSION_TRIGGER_ANIMATION)
         {
             llStartAnimation(anim);
+            llSetText("", ZERO_VECTOR, 0);
             vector target = startPosition + endOffset;
             moveTo(target, speed_up);
         }
@@ -80,7 +80,6 @@ default
 moveTo(vector targetPos, float speed)
 {
     isMoving = TRUE;
-
     vector current = llGetPos();
     vector delta = targetPos - current;
     float distance = llVecDist(current, targetPos);
@@ -98,10 +97,4 @@ moveTo(vector targetPos, float speed)
 
     llSetRegionPos(targetPos);
     isMoving = FALSE;
-
-    if (avatarOn && speed == speed_up)
-    {
-        llSleep(0.5); 
-        llUnSit(currentAvatar);
-    }
 }
