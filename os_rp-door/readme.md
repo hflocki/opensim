@@ -1,6 +1,9 @@
 # YADS - Yet Another Door Script
-Original from: https://github.com/uriesk/Door-Script-YADS
 ![logo](images/box-icon.png)
+
+Original from: https://github.com/uriesk/Door-Script-YADS
+
+I make an addon for this script, to have an rp-door with a picable lock.
 
 This is a simple script for opening and closing doors in OpenSim and Second Life.
 It works with standalone doors, with doors that are linked, doors that are "cut" (so that they need simple rotation),
