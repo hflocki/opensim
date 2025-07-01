@@ -16,11 +16,10 @@
 //
 // Violations will be pursued under applicable copyright law.
 
-// Konfiguration
 vector startPosition;
-vector endOffset = <0, 0, 10.2>;     // Zielhöhe
-float speed_up = 1.0;              // Geschwindigkeit nach oben
-float speed_down = 5.0;            // Geschwindigkeit nach unten
+vector endOffset = <0, 0, 3.7>;     // target height
+float speed_up = 1.0;              // speed up
+float speed_down = 5.0;            // speed down
 string anim = "climb";
 
 integer avatarOn = FALSE;
@@ -75,7 +74,6 @@ default
         }
     }
 }
-
 
 moveTo(vector targetPos, float speed)
 {
