@@ -1,4 +1,5 @@
 # YADS - Yet Another Door Script
+Original from: https://github.com/uriesk/Door-Script-YADS
 ![logo](images/box-icon.png)
 
 This is a simple script for opening and closing doors in OpenSim and Second Life.
