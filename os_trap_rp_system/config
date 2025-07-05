@@ -1,0 +1,18 @@
+# Schadenstypen
+damage:cut=10
+damage:poison=8
+damage:fire=12
+damage:acid=18
+
+# Save-Space-Ziel
+savespace:place=428,457,22
+
+# Heiltrank-Werte
+heal:potion_low=2
+heal:potion_small=10
+heal:potion_medium=30
+heal:potion_big=60
+heal:potion_ultra=100
+
+# Cooldown für manuelle Heilung (Sekunden)
+heal:cooldown=15
