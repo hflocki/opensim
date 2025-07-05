@@ -1,0 +1,54 @@
+
+[Trap Beschreibung – Anleitung]
+
+⚠️ Diese Trap nutzt Parameter aus der Beschreibung, um Schaden zu erzeugen.
+<Typ>:<Parameter>=<Wert>:<Parameter>=<Wert>:...
+
+
+🔧 Beispiel:
+fire:radius=4:chance=100:cooldown=8
+poison:radius=6:chance=70:cooldown=12
+
+🔍 Erklärung:
+
+• poison – Schadenstyp (z. B. poison, fire, cut, fall)
+→ Der Typ bestimmt, welche Schadensart angezeigt wird und wie viel Schaden sie verursacht.
+
+• radius=3 – (Derzeit noch ohne Funktion, vorbereitet für spätere Radius-Effekte)
+
+• chance=80 – Wahrscheinlichkeit in %, dass der Schaden bei Berührung ausgelöst wird.
+→ Beispiel: 80 % Chance, dass ein Avatar Schaden erhält.
+
+✅ Weitere Beispiele:
+
+• fire:chance=100  
+→ 100 % sicherer Feuerschaden
+
+• cut:chance=50  
+→ 50 % Chance auf Schnittwunde
+
+• poison:radius=5:chance=70  
+→ Vorbereitung für Gift-Falle mit 5m Radius (zukünftig nutzbar)
+
+
+📌 Hinweise zur Nutzung
+Keine Leerzeichen in der Beschreibung.
+Parameter klein schreiben (poison, nicht Poison).
+Nicht verwendete Parameter werden ignoriert.
+
+Standardwerte bei fehlenden Angaben:
+ - chance=100
+ - radius=3
+ - cooldown=5
+
+🛠 Schaden und Anzeige werden automatisch über das zentrale damage_server-Prim verwaltet.
+
+
+Neue Schaden/Traps könenn ergänzt werden zb
+in config notecard hinzufügen 
+damage:acid=18
+damage:electric=25
+damage:curse=12
+
+in Trap Beschreibung 
+acid:radius=4:chance=75:cooldown=5
